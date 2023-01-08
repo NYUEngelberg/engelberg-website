@@ -20,6 +20,10 @@
   @include breakpoint($small-only) {
     grid-template-columns: 1fr;
   }
+
+  .card-link-wrapper {
+    text-decoration: none;
+  }
 }
 
 /* GLOBAL Card Styles */

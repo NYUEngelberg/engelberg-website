@@ -84,25 +84,25 @@ top_bar: no-logo
     <div class="column large-12 small-12">
       <h3 class="heading-b">Upcoming Events</h3>
     </div>
-    <div class="cards-wrapper markdown-secondary">
+    <div class="cards-wrapper">
       {% for card in data.upcoming_events %}
       <div class="card card--event">
-        <div
-          class="card__image"
-          style="background-image: url({{card.event_image.url}})"
-        ></div>
-        <div class="card__detail">
-          <span class="card__date">{{ card.event_start | date: "%B %d, %Y" }}</span>
-          {% if card.external_url %}
-            <a class="external-link" href="{{ card.external_url }}">
-          {% else %}
-            <a href="{{ card.pretty_url | prepend: '/events/' | relative_url }}">
-          {% endif %}
+        {% if card.external_url %}
+          <a class="external-link card-link-wrapper" href="{{ card.external_url }}">
+        {% else %}
+          <a class="card-link-wrapper" href="{{ card.pretty_url | prepend: '/events/' | relative_url }}">
+        {% endif %}
+          <div
+            class="card__image"
+            style="background-image: url({{card.event_image.url}})"
+          ></div>
+          <div class="card__detail">
+            <span class="card__date">{{ card.event_start | date: "%B %d, %Y" }}</span>
             <span class="card__title">{{ card.title }}</span>
-          </a>
-          <span class="card__description ">{{ card.short_description }}</span>
-          <span class="card__type">{{ card.event_type }}</span>
-        </div>
+            <span class="card__description ">{{ card.short_description }}</span>
+            <span class="card__type">{{ card.event_type }}</span>
+          </div>
+        </a>
       </div>
       {% endfor %}
     </div>
