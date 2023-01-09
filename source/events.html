@@ -26,29 +26,29 @@ top_bar: white
   </div>
   <!-- card sections  -->
   <!-- UPCOMING EVENTS  -->
-  <div class="row  row--thin expanded ">
+  <div class="row row--thin expanded ">
     <div class="column large-12 small-12 card-section-heading card-section-heading--thick">
       <h2>Upcoming Events</h2>
     </div>
     <div class="cards-wrapper">
       {% for card in site.data.contentful.event.event %}
       <div class="card card--event card--event-long">
-        <div
-          class="card__image"
-          style="background-image: url({{ card.event_image.url}})"
-        ></div>
-        <div class="card__detail">
-          <span class="card__date">{{ card.event_start  | date: "%B %d, %Y" }}</span>
-          {% if card.external_url and card.external_url.size != 0%}
-          <a class="external-link" href="{{card.external_url}}">
-          {% else %}
-          <a href="{{card.pretty_url | prepend: '/events/' | relative_url }}">
-          {% endif %}
+        {% if card.external_url and card.external_url.size != 0%}
+          <a class="external-link card-link-wrapper" href="{{card.external_url}}">
+        {% else %}
+          <a class="card-link-wrapper" href="{{card.pretty_url | prepend: '/events/' | relative_url }}">
+        {% endif %}
+          <div
+            class="card__image"
+            style="background-image: url({{ card.event_image.url}})"
+          ></div>
+          <div class="card__detail">
+            <span class="card__date">{{ card.event_start  | date: "%B %d, %Y" }}</span>
             <span class="card__title">{{ card.title }}</span>
-          </a>
-          <span class="card__description ">{{ card.short_description }}</span>
-          <span class="card__type">{{ card.event_type }}</span>
-        </div>
+            <span class="card__description ">{{ card.short_description }}</span>
+            <span class="card__type">{{ card.event_type }}</span>
+          </div>
+        </a>
       </div>
       {% endfor %}
     </div>
