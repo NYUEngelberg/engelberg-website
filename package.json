@@ -14,7 +14,7 @@
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "deploy": "gulp deploy",
+    "build": "gulp build",
     "dev": "gulp",
     "lint": "eslint ./source/_js/**/*.js",
     "test": "echo \"No tests\" && exit 0",
