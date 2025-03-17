@@ -5,18 +5,18 @@ on:
     secrets:
       ACTIONS_DEPLOY_KEY:
         description: GitHub Deploy Key
-      ENGELBERG_CONTENTFUL_SPACE_ID:
+      CONTENTFUL_SPACE_ID:
         description: 'Contentful Space ID passed from the build-on-publish.yml workflow'
         required: true
-      ENGELBERG_CONTENTFUL_ACCESS_TOKEN:
+      CONTENTFUL_ACCESS_TOKEN:
         description: 'Contentful Access Token passed from the build-on-publish.yml workflow'
         required: true
   push:
     branches: [ main ]
 env:
   ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-  ENGELBERG_CONTENTFUL_SPACE_ID: ${{ secrets.ENGELBERG_CONTENTFUL_SPACE_ID }}
-  ENGELBERG_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.ENGELBERG_CONTENTFUL_ACCESS_TOKEN }}
+  CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+  CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
 jobs:
   pull-build-deploy:
     runs-on: ubuntu-22.04
