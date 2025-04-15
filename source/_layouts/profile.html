@@ -14,7 +14,7 @@ seo_image_path: #'/images/media/filename.jpg'
       <div class="profile-card">
         <div class="card__avatar-wrapper">
           <div class="card__avatar">
-            <img src="{{ page.photo.url }}" alt="{{page.photo.description}}}}"/>
+            <img src="{{ page.photo.url }}" alt="{{page.photo.description | escape}}"/>
           </div>
         </div>
 

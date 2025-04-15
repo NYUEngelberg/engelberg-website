@@ -20,7 +20,7 @@ seo_image_path: #'/images/media/filename.jpg'
     </div>
     <div class="column large-offset-1 large-4 medium-12 small-12 event__sidebar-header no-padding">
       <div class="event__featured-image-wrapper">
-        <img src="{{page.event_image.url}}" alt="{{page.event_image.description}}" />
+        <img src="{{page.event_image.url}}" alt="{{page.event_image.description | escape}}" />
       </div>
       {% if page.button_url and page.button_text %}
       <div class="button-container">
@@ -39,7 +39,7 @@ seo_image_path: #'/images/media/filename.jpg'
       {% for item in page.event_media %}
         <figure>
           {% assign alt_desc = item.description | replace: '"', '' | replace: "'", '' %}
-          <img src="{{ item.url }}" alt="{{ alt_desc }}">
+          <img src="{{ item.url }}" alt="{{ alt_desc | escape }}">
           <figcaption class="event-media-desc">{{ item.description }}</figcaption>
         </figure>
       {% endfor %}

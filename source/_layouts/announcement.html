@@ -18,7 +18,7 @@ seo_image_path: #'/images/media/filename.jpg'
       <div class="sidebar">
         {% for image in page.column_images %}
           <div class="news-image-wrapper">
-            <img src="{{image.url}}" alt="{{image.url.description}}">
+            <img src="{{image.url}}" alt="{{image.url.description | escape}}">
           </div>
         {% endfor %}
       </div>
