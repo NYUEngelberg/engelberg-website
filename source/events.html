@@ -25,35 +25,42 @@ top_bar: white
   </div>
   <!-- card sections  -->
   <!-- UPCOMING EVENTS  -->
-  <div class="row  row--thin expanded ">
-    <div class="column large-12 small-12 card-section-heading card-section-heading--thick">
-      <h2>Upcoming Events</h2>
-    </div>
-    <div class="cards-wrapper cards-wrapper--upcoming">
-      {% assign events_sort_asc = site.data.contentful.event.event | sort: "event_start" %}
-      {% for card in events_sort_asc %} {% include components/card-event.html card=card
-      event_type="upcoming" %} {% endfor %}
-    </div>
-  </div>
-
-  {% assign all_years = "" | split: "" %} {% for event in site.data.contentful.event.event %} {% assign year =
-  event.event_start | date: "%Y" %} {% assign all_years = all_years | push: year %} {% endfor %} {% assign all_years =
-  all_years | compact | uniq | sort | reverse %}
-
-  <!-- PAST EVENTS  -->
-  <div class="row  row--thin expanded" id="event-list">
-    <div class="column large-12 small-12 card-section-heading card-section-heading--thick">
-      <h2>Past Events</h2>
-      <div class="dropdown-component">
-        
-        {% include components/dropdown.html content=all_years component_id="event-year" component_name="years"
-        component_default="All Years" component_label_class="visually-hidden button--filter past-events-filter" %}
+  {% if site.data.contentful.event.event %}
+    <div class="row  row--thin expanded ">
+      <div class="column large-12 small-12 card-section-heading card-section-heading--thick">
+        <h2>Upcoming Events</h2>
+      </div>
+      <div class="cards-wrapper cards-wrapper--upcoming">
+        {% assign events_sort_asc = site.data.contentful.event.event | sort: "event_start" %}
+        {% for card in events_sort_asc %} {% include components/card-event.html card=card
+        event_type="upcoming" %} {% endfor %}
       </div>
     </div>
-    <div class="cards-wrapper  cards-wrapper--past list">
-      {% assign events_sort_desc = site.data.contentful.event.event | sort: "event_start" | reverse %}
-      {% for card in events_sort_desc %} {% include components/card-event.html card=card
-      event_type="past" %} {% endfor %}
+
+    {% assign all_years = "" | split: "" %} {% for event in site.data.contentful.event.event %} {% assign year =
+    event.event_start | date: "%Y" %} {% assign all_years = all_years | push: year %} {% endfor %} {% assign all_years =
+    all_years | compact | uniq | sort | reverse %}
+
+    <!-- PAST EVENTS  -->
+    <div class="row  row--thin expanded" id="event-list">
+      <div class="column large-12 small-12 card-section-heading card-section-heading--thick">
+        <h2>Past Events</h2>
+        <div class="dropdown-component">
+          {% include components/dropdown.html content=all_years component_id="event-year" component_name="years"
+          component_default="All Years" component_label_class="visually-hidden button--filter past-events-filter" %}
+        </div>
+      </div>
+      <div class="cards-wrapper  cards-wrapper--past list">
+        {% assign events_sort_desc = site.data.contentful.event.event | sort: "event_start" | reverse %}
+        {% for card in events_sort_desc %} {% include components/card-event.html card=card
+        event_type="past" %} {% endfor %}
+      </div>
     </div>
-  </div>
+  {% else %}
+    <div class="row  row--thin expanded ">
+      <div class="column large-12 small-12 card-section-heading card-section-heading--thick">
+        <h2>No events to display</h2>
+      </div>
+    </div>
+  {% endif %}
 </main>

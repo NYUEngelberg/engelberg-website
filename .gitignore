@@ -8,3 +8,4 @@ node_modules
 source/assets
 .vscode/
 source/_data/contentful
+.vercel
