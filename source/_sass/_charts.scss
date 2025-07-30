@@ -1,13 +1,8 @@
-svg {
-  border: black solid 1px;
-}
-
 .visualization {
   width: 100%;
 
   svg {
     width: 100%;
-    // height: 100%;
   }
 }
 
@@ -17,23 +12,101 @@ svg {
 
 .d3-chart,
 .visualization {
-  @include page-section-padding;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 0.5rem 6rem 0;
+  @include breakpoint($medium-only) {
+    padding: 0 2rem;
+  }
+  @include breakpoint($small-only) {
+    padding: 0 1.5rem;
+  }
+  .bar {
+    transition: opacity 0.4s ease;
+  }
 }
 
 .legend {
-  outline: red solid 1px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 4rem;
+  justify-content: left;
+  @include breakpoint($large) {
+    padding: 0 3.5rem;
+  }
+  @include breakpoint($medium-only) {
+    padding: 0 3rem;
+  }
+  @include breakpoint($small-only) {
+    padding: 0 2rem;
+  }
 }
+
+.chart-container {
+  background-color: $gray-50;
+  padding: 2rem 0;
+}
+.chart-container > h4.chart-title {
+  margin: 0;
+}
+
+.legend-button-container {
+  display: block;
+  padding: 8px 16px 0 0;
+  font-family: $sans-serif;
+  color: #707070;
+  transition: opacity 0.4s ease;
+}
+
 .legend-button {
-  min-height: 2rem;
-  padding: 4px;
-  height: auto;
-  width: auto;
-  margin: 4px;
-  outline: red solid 1px;
+  vertical-align: text-bottom;
+  margin-right: 4px;
+  border-radius: 0;
+  height: 16px;
+  width: 16px;
+  max-height: 16px;
+  min-width: 16px;
+  display: inline-block;
+  pointer-events: none;
+}
+.legend-button-text {
+  pointer-events: none;
+}
+.d3-chart-caption > p {
+  font-family: $sans-serif;
+  font-style: italic;
+  color: #707070;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.tick > text {
+  font-family: $sans-serif;
+  font-weight: 700;
+  color: #707070;
+  font-size: 1rem;
+  @include breakpoint($large) {
+    font-size: 1.3rem;
+  }
+
+}
+
+.tooltip {
+  display: inline-block;
+  transition: display 0.4s ease-in-out 0.4s;
+  background: $white;
+  position: absolute;
+  font-size: 1rem;
+  p.tooltip-text {
+    max-width: 9rem;
+    max-height: 9rem;
+    font-family: $sans-serif;
+    font-size: 0.9rem;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 4px;
+    .bold {
+      font-weight: bold;
+    }
+  }
+  .data-value {
+    word-break: break-word;
+  }
 }

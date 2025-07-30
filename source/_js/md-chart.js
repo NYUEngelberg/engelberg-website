@@ -1,7 +1,7 @@
 const MdChart = {
   addToggle() {
     const tables = document.querySelectorAll('.table__body--chart');
-    const htmlButtonString = `<button class="markdown-table-toggle"><i class="material-icons">expand_more</i>Show chart data</button>`;
+    const htmlButtonString = `<button class="markdown-table-toggle">Show chart data<i class="material-icons">keyboard_arrow_right</i></button>`;
     tables.forEach(item => {
       item.insertAdjacentHTML('beforebegin', htmlButtonString);
     });
@@ -12,7 +12,7 @@ const MdChart = {
       button.addEventListener('click', e => {
         e.target.classList.toggle('active');
         const icon = e.target.querySelector('i');
-        e.target.classList.contains('active') ? icon.innerHTML = 'expand_less' : icon.innerHTML = 'expand_more';
+        e.target.classList.contains('active') ? icon.innerHTML = 'keyboard_arrow_down' : icon.innerHTML = 'keyboard_arrow_right';
 
         const subsequentTable = e.target.nextSibling;
         subsequentTable.classList.toggle('active');

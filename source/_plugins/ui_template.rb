@@ -3,16 +3,24 @@ require_relative './markdownify_yaml.rb'
 module UITemplate
   include MarkdownifyYAML
 
-  def create_chart_body(chart_title, chart_type, chart_markdown)
+  def create_chart_body(chart_id, chart_title, chart_caption, chart_type, chart_markdown, chart_data_table_unit)
     case chart_type
-      when 'Pie'
-        "<div class=\"d3-chart d3-pie-chart table\" id=\"#{Jekyll::Utils.slugify(chart_title, :mode => nil)}\">
-          <div class=\"table__body table__body--chart\">#{markdownify_yaml(chart_markdown)}</div>
+      when 'Stacked Horizontal Bar'
+        "<div class=\"chart-container\" id=\"#{Jekyll::Utils.slugify(chart_title, :mode => nil)}-#{chart_id}\" data-unit=\"#{chart_data_table_unit}\">
+          <h4 class=\"chart-title\">#{chart_title}</h4>
+          <div class=\"d3-chart d3-horizontal-bar-chart markdown-table\" id=\"chart-#{Jekyll::Utils.slugify(chart_title, :mode => nil)}-#{chart_id}\">
+          </div>
+          <div class=\"d3-chart-caption\">#{chart_caption}</div>
+          <div class=\"table__body table__body--chart\" id=\"table-#{Jekyll::Utils.slugify(chart_title, :mode => nil)}-#{chart_id}\">#{markdownify_yaml(chart_markdown)}</div>
         </div>
         "
       when 'Stacked Vertical Bar'
-        "<div class=\"d3-chart d3-bar-chart table\" id=\"#{Jekyll::Utils.slugify(chart_title, :mode => nil)}\">
-          <div class=\"table__body table__body--chart\">#{markdownify_yaml(chart_markdown)}</div>
+        "<div class=\"chart-container\" id=\"#{Jekyll::Utils.slugify(chart_title, :mode => nil)}-#{chart_id}\" data-unit=\"#{chart_data_table_unit}\">
+          <h4 class=\"chart-title\">#{chart_title}</h4>
+          <div class=\"d3-chart d3-vertical-bar-chart markdown-table\" id=\"chart-#{Jekyll::Utils.slugify(chart_title, :mode => nil)}-#{chart_id}\">
+          </div>
+          <div class=\"d3-chart-caption\">#{chart_caption}</div>
+          <div class=\"table__body table__body--chart\" id=\"table-#{Jekyll::Utils.slugify(chart_title, :mode => nil)}-#{chart_id}\">#{markdownify_yaml(chart_markdown)}</div>
         </div>
         "
       else
