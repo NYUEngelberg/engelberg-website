@@ -17,7 +17,7 @@ title:
 email:
 description: > # this means to ignore newlines until "baseurl:"
 
-baseurl: # the subpath of your site, e.g. /blog
+baseurl: '' # the subpath of your site, e.g. /blog
 url: "https://nyuengelberg.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:
@@ -74,6 +74,17 @@ contentful:
         client_options:
           max_include_resolution_depth: 2
           reuse_entries: false
+    - chart:
+        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
+        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        base_path: ./source
+        destination: /contentful
+        all_entries: true
+        cda_query:
+          content_type: chart
+        client_options:
+          max_include_resolution_depth: 2
+          reuse_entries: false          
     - project:
         space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
         access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
