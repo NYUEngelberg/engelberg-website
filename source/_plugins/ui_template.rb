@@ -50,6 +50,9 @@ module UITemplate
   end
 
   def create_table(title, body, caption)
+    title = title || ''
+    body = body || ''
+    caption = caption  || ''
     "<div class=\"table\">
       <p class=\"table__title\">#{title}</p>
       <div class=\"table__body\">#{markdownify_yaml(body)}</div>
