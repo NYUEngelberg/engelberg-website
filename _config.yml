@@ -53,8 +53,8 @@ collections:
 contentful:
   spaces:
     - index:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -64,8 +64,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - product:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -86,8 +86,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false          
     - project:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -97,8 +97,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - genericPage:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -108,8 +108,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - portalPage:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -119,8 +119,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - people:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -130,8 +130,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - genericPage:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -141,8 +141,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - projectsPage:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -152,8 +152,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - eventsPage:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -163,8 +163,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - event:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -174,8 +174,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - onTopic:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -185,8 +185,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - course:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -196,8 +196,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - news:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -207,8 +207,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - figure:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
@@ -218,8 +218,8 @@ contentful:
           max_include_resolution_depth: 2
           reuse_entries: false
     - communityBooks:
-        space: ENV_ENGELBERG_CONTENTFUL_SPACE_ID
-        access_token: ENV_ENGELBERG_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         base_path: ./source
         destination: /contentful
         all_entries: true
