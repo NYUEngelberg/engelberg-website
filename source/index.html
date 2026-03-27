@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Engelberg Center on Innovation Law & Policy
-description: The Engelberg Center on Innovation Law & Policy at NYU School of Law examines the key drivers of innovation as well as the law and policy that best support innovation.
 top_bar: no-logo
 ---
 
-{% assign data = site.data.contentful.index.index | first %}
+{% assign latest_blog_post = site.data.contentful.news.news | sort: "publication_date" | reverse | first %}
+{% assign latest_publication = site.data.contentful.product.product | sort: "publication_date" | reverse | first %}
 
 <main role="main" id="main" class="index">
   <!-- main content starts here -->
@@ -13,45 +12,55 @@ top_bar: no-logo
   {% include components/nav-button.html %}
   <div class="row expanded section--gray top-section">
     <div class="column large-5 medium-12 small-12">
-      <h1 class="visually-hidden">Engelberg Center on Innovation Law & Policy: NYU School of Law</h1>
+      <h1 class="visually-hidden">Library Futures</h1>
       <div class="main-header" aria-hidden="true">
-        <img id="main-logo" src="{{ '/images/ec-vertical-lockup-color.svg' | relative_url }}" />
-        {% comment %}
-        <div class="logo-container"></div>
-        <span class="main-header-one">Engelberg</span>
-        <span class="main-header-one">Center</span>
-        <span class="main-header-two">on Innovation Law & Policy</span>
-        <span class="main-header-three">NYU School of Law</span>
-        {% endcomment %}
+        <img id="main-logo" src="{{ '/images/lf-vertical-lockup-color.svg' | relative_url }}" />
       </div>
-      <div class="button-container">
-        <a class="button button--arrow" href="{{ '/our-mission' | relative_url }}">About the Engelberg Center</a>
+      <p>Library Futures is a leading organization at the intersection of technology, policy, law, and public access to information.</p>
+      <div class="form">
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form class="field-row" action="https://libraryfutures.us2.list-manage.com/subscribe/post?u=e46ce6c2905a00acf5c43debe&amp;id=2c035225f5&amp;f_id=00439fe3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Email address">
+            <div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Get updates"></div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e46ce6c2905a00acf5c43debe_2c035225f5" tabindex="-1" value=""></div>
+          </form>
+        </div>
+        <p>Library Futures is a project of <a href="https://www.nyuengelberg.org">The Engelberg Center on Innovation Law & Policy at NYU Law</a>.</p>
+        <div class="button-container">
+          <a class="button button--arrow" href="{{ '/our-work' | relative_url }}">What we do</a>
+          <a class="button button--arrow" href="{{ '/who-we-are' | relative_url }}">Who we are</a>
+        </div>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='LGL_SAL';ftypes[7]='text';fnames[8]='LGL_ID';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='zip';fnames[12]='MMERGE12';ftypes[12]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        <!--End mc_embed_signup-->
       </div>
     </div>
     <div class="column large-6 large-offset-1 no-padding medium-12 small-12">
-      <h2 class="heading-c">Featured Research</h2>
+      <h2 class="heading-c">The latest</h2>
 
-      {% include components/card-featured.html card=data.featured_research path="/outputs/" %}
+      {% include components/card-featured.html card=latest_blog_post path="/post/" %}
 
       <div class="button-container button-container--right">
-        <a class="button button--arrow" href="{{ '/outputs' | relative_url  }}">All Engelberg Center Research</a>
+        <a class="button button--arrow" href="{{ '/blog' | relative_url  }}">All posts</a>
       </div>
     </div>
   </div>
   <!-- END FEATURED PROJECT CARD  -->
 
-  <!-- PODCAST CARD with header, title, episode image, episode description, player -->
-  <!-- Layout 2 -->
   <div class="row expanded inverted-section">
     <div class="column large-4 medium-12 small-12 no-padding">
-      {% include components/card-podcast.html podcast=data.featured_podcast %}
+      {% include components/card-publication.html publication=latest_publication %}
     </div>
     <div class="column large-7 large-offset-1 medium-12 small-12">
-      <h3 class="heading-b">{{data.short_description_title}}</h3>
-      <div class="markdown-secondary">
-        {{ data.short_description | markdownify }}
-      </div>
-      <a class="link link--arrow inverted" href="{{ data.learn_more_url }}">Learn More</a>
+      <p><a class="link link--arrow inverted" href="/publications">See all publications</a></p>
+      <h3 class="heading-b">Selected Projects:</h3>
+      <p><a class="link link--arrow inverted" href="https://imagineif.libraryfutures.net/">Imagine IF: An Intellectual Freedom Choose your own Adventure Game</a></p>
+      <p><a class="link link--arrow inverted" href="https://www.controlleddigitallending.org">Controlled Digital Lending: loan print books to digital patrons</a></p>
+      <p><a class="link link--arrow inverted" href="https://ebooksforus.com">E-books for Us: comics on the real cost of library e-books</a></p>
     </div>
   </div>
 
@@ -79,10 +88,10 @@ top_bar: no-logo
     <div class="column large-7 large-offset-1 medium-12 small-12">
     {% endcomment %}
       <div class="column">
-      <h3 class="heading-b">In the News</h3>
-      <a class="link link--arrow" href="{{ '/news' | relative_url }}">All Engelberg Center News</a>
+      <h3 class="heading-b">More from our Blog</h3>
+      <a class="link link--arrow" href="{{ '/blog' | relative_url }}">All Posts</a>
       <div class="news-feed__container markdown-secondary">
-        {% for item in data.featured_news %} {% include components/news-item.html item=item %} {% endfor %}
+        {% for item in site.data.contentful.news.news | sort: "publication_date" | reverse limit:10 %} {% include components/blog-item.html item=item %} {% endfor %}
       </div>
     </div>
   </div>
