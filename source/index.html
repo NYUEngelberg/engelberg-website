@@ -16,7 +16,7 @@ top_bar: no-logo
       <div class="main-header" aria-hidden="true">
         <img id="main-logo" src="{{ '/images/lf-vertical-lockup-color.svg' | relative_url }}" />
       </div>
-      <p>We mobilize a community of experts to encourage the adoption of technologies that uplift libraries in the digital age, promoting new possibilities for preservation of and unfettered access to information.</p>
+      <p>Library Futures is a leading organization at the intersection of technology, policy, law, and public access to information.</p>
       <div class="form">
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup">
@@ -57,34 +57,13 @@ top_bar: no-logo
     </div>
     <div class="column large-7 large-offset-1 medium-12 small-12">
       <p><a class="link link--arrow inverted" href="/publications">See all publications</a></p>
-      <h3 class="heading-b">Or, see what else we do:</h3>
-      <p><a class="link link--arrow inverted" href="https://cats.libraryfutures.net">CATS: a twice-monthly newsletter about copyright and technology</a></p>
+      <h3 class="heading-b">Selected Projects:</h3>
+      <p><a class="link link--arrow inverted" href="https://imagineif.libraryfutures.net/">Imagine IF: An Intellectual Freedom Choose your own Adventure Game</a></p>
       <p><a class="link link--arrow inverted" href="https://www.controlleddigitallending.org">Controlled Digital Lending: loan print books to digital patrons</a></p>
       <p><a class="link link--arrow inverted" href="https://ebooksforus.com">E-books for Us: comics on the real cost of library e-books</a></p>
     </div>
   </div>
 
-  <!-- END PODCAST CARD  -->
-
-  <!-- Layout 2 -->
-  <div class="row expanded twitter-news-container">
-    
-    {%comment%}
-    <!-- <div class="column large-4 medium-12 small-12">
-      <h3 class="heading-b">From Twitter</h3>
-      <a class="link link--arrow" href="https://twitter.com/nyuengelberg">Follow us on Twitter</a>
-      <div class="twitter-feed__container" id="twitter-container">
-        <a
-          class="twitter-timeline"
-          href="https://twitter.com/nyuengelberg"
-          data-tweet-limit="3"
-          data-chrome="nofooter noheader transparent"
-        >
-          Tweets by @TwitterDev
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-    </div> -->
     <div class="column large-7 large-offset-1 medium-12 small-12">
     {% endcomment %}
       <div class="column">
@@ -95,18 +74,3 @@ top_bar: no-logo
       </div>
     </div>
   </div>
-  <!-- END LAYOUT 2 -->
-  <!-- EVENT CARD with date, title, type  -->
-  {% if data.upcoming_events and data.upcoming_events.size != 0 %}
-  <div class="row expanded">
-    <div class="column large-12 small-12">
-      <h3 class="heading-b">Upcoming Events</h3>
-    </div>
-    <div class="cards-wrapper">
-      {% for card in data.upcoming_events %} {% include components/card-event.html card=card event_type="upcoming" %} {%
-      endfor %}
-    </div>
-  </div>
-  {% endif %}
-  <!-- END EVENT CARD  -->
-</main>
