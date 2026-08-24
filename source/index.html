@@ -39,34 +39,16 @@ top_bar: no-logo
     </div>
   </div>
   <!-- END FEATURED PROJECT CARD  -->
-  {% if data.featured_event %}
-  <div class="row expanded inverted-section">
-    <div class="column large-4 medium-12 small-12 no-padding">
-      {% include components/card-featured-event.html event=data.featured_event %}
-    </div>
-    <div class="column large-7 large-offset-1 medium-12 small-12">
-      <h3 class="heading-b">{{data.featured_event.short_description}}</h3>
-      <div class="markdown-secondary">
-        {{ data.featured_event.long_description | markdownify }}
-      </div>
 
-      {% if event.external_url and event.external_url.size != 0%}
-      <div class="external-link">
-        <a class="link link--external-arrow inverted" href="{{ event.external_url }}">Learn More</a>
-      </div>
-      {% else %}
-      <a class="link link--arrow inverted" href="{{ event.pretty_url | prepend: '/events/' | relative_url  }}">
-        Learn More
-      </a>
-      {% endif %}
-    </div>
-  </div>
-  {% else %}
-  <!-- PODCAST CARD with header, title, episode image, episode description, player -->
-  <!-- Layout 2 -->
+  <!-- Student section with featured event or podcast card with header, title, episode image, episode description, player -->
+  
   <div class="row expanded inverted-section">
     <div class="column large-4 medium-12 small-12 no-padding">
+      {% if data.featured_event %}
+      {% include components/card-featured-event.html event=data.featured_event %}
+      {% else %}
       {% include components/card-podcast.html podcast=data.featured_podcast %}
+      {% endif %}
     </div>
     <div class="column large-7 large-offset-1 medium-12 small-12">
       <h3 class="heading-b">{{data.short_description_title}}</h3>
@@ -77,8 +59,6 @@ top_bar: no-logo
     </div>
   </div>
 
-  <!-- END PODCAST CARD  -->
-  {%endif%}
   <!-- Layout 2 -->
   <div class="row expanded">
     {% if data.featured_event %}
