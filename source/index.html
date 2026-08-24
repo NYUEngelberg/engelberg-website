@@ -39,7 +39,29 @@ top_bar: no-logo
     </div>
   </div>
   <!-- END FEATURED PROJECT CARD  -->
+  {% if data.featured_event %}
+  <div class="row expanded inverted-section">
+    <div class="column large-4 medium-12 small-12 no-padding">
+      {% include components/card-featured-event.html event=data.featured_event %}
+    </div>
+    <div class="column large-7 large-offset-1 medium-12 small-12">
+      <h3 class="heading-b">{{data.featured_event.short_description}}</h3>
+      <div class="markdown-secondary">
+        {{ data.featured_event.long_description | markdownify }}
+      </div>
 
+      {% if event.external_url and event.external_url.size != 0%}
+      <div class="external-link">
+        <a class="link link--external-arrow inverted" href="{{ event.external_url }}">Learn More</a>
+      </div>
+      {% else %}
+      <a class="link link--arrow inverted" href="{{ event.pretty_url | prepend: '/events/' | relative_url  }}">
+        Learn More
+      </a>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
   <!-- PODCAST CARD with header, title, episode image, episode description, player -->
   <!-- Layout 2 -->
   <div class="row expanded inverted-section">
@@ -56,35 +78,26 @@ top_bar: no-logo
   </div>
 
   <!-- END PODCAST CARD  -->
-
+  {%endif%}
   <!-- Layout 2 -->
-  <div class="row expanded twitter-news-container">
-    
-    {%comment%}
-    <!-- <div class="column large-4 medium-12 small-12">
-      <h3 class="heading-b">From Twitter</h3>
-      <a class="link link--arrow" href="https://twitter.com/nyuengelberg">Follow us on Twitter</a>
-      <div class="twitter-feed__container" id="twitter-container">
-        <a
-          class="twitter-timeline"
-          href="https://twitter.com/nyuengelberg"
-          data-tweet-limit="3"
-          data-chrome="nofooter noheader transparent"
-        >
-          Tweets by @TwitterDev
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-    </div> -->
-    <div class="column large-7 large-offset-1 medium-12 small-12">
-    {% endcomment %}
-      <div class="column">
+  <div class="row expanded">
+    {% if data.featured_event %}
+    <div class="column large-8 medium-12 small-12">
+    {% else %}
+    <div class="column">
+    {% endif %}
       <h3 class="heading-b">In the News</h3>
       <a class="link link--arrow" href="{{ '/news' | relative_url }}">All Engelberg Center News</a>
       <div class="news-feed__container markdown-secondary">
         {% for item in data.featured_news %} {% include components/news-item.html item=item %} {% endfor %}
       </div>
     </div>
+
+    {% if data.featured_event %}
+    <div class="column inline-podcast-card">
+      {% include components/card-podcast.html podcast=data.featured_podcast %}
+    </div>
+    {% endif %}
   </div>
   <!-- END LAYOUT 2 -->
   <!-- EVENT CARD with date, title, type  -->
