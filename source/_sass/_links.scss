@@ -12,7 +12,8 @@ a.link--secondary {
   }
 }
 
-.link--arrow {
+.link--arrow,
+.link--external-arrow {
   @include all-caps-text;
   font-family: $sans-serif;
   text-decoration: none;
@@ -37,6 +38,15 @@ a.link--secondary {
   }
 }
 
+.link--external-arrow.inverted {
+  color: $white;
+    &:after {
+    content: url('../images/icons/open_in_new_white.svg');
+  }
+  &:hover {
+    filter: opacity(50%);
+  }
+}
 .link--arrow.inverted {
   color: $white;
 
@@ -80,7 +90,8 @@ a.link--primary {
   @include markdown-primary-links;
 }
 
-a.external-link, span.external-link {
+a.external-link,
+span.external-link {
   &:after {
     content: 'open_in_new';
     @extend .u-material-icons;

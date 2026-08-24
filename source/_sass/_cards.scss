@@ -327,7 +327,6 @@
 }
 
 .card {
-
   // global card styles
   .card__detail {
     padding: 1rem 2rem;
@@ -352,7 +351,7 @@
   }
 
   span,
-  .card__author>p {
+  .card__author > p {
     font-family: $sans-serif;
     font-weight: 700;
     display: block;
@@ -431,7 +430,48 @@
   }
 }
 
+.inline-podcast-card > .card--podcast {
+  margin-top: 0 !important;
+}
 // END PODCAST
+
+.card--featured-event-index {
+  display: flex;
+  margin-top: -8rem;
+  background-color: $white;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  span {
+    color: $black !important;
+    background-color: transparent;
+  }
+  .card-image {
+    border-radius: 16px 16px 0 0;
+    height: 14rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    h2 {
+      font-size: 2.4rem;
+      margin: 1rem 0;
+    }
+    padding: 1.5rem 2.5rem 2.5rem;
+    .link-container {
+      margin-top: 2rem;
+    }
+  }
+}
 
 // FEATURED CARDS
 .card--featured {
